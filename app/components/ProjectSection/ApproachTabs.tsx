@@ -61,7 +61,7 @@ export const ApproachTabs: React.FC<{ phases: Phase[] }> = ({ phases }) => {
         <div
           className={
             "absolute inset-0 left-0 z-1 rounded-xl bg-gradient-to-br from-slate-500 to-slate-900 [box-shadow:var(--button-shadow)] sm:inset-y-2" +
-            " phase-1:translate-x-[0%] phase-2:translate-x-[100%] phase-3:translate-x-[200%] phase-4:translate-x-[300%] phase-5:translate-x-[400%] transition-transform duration-300 ease-in-out"
+            "phase-1:translate-x-[0%] phase-2:translate-x-[100%] phase-3:translate-x-[200%] phase-4:translate-x-[300%] phase-5:translate-x-[400%] transition-transform duration-300 ease-in-out"
           }
           style={{
             width: `${tabWidthPct}%`,

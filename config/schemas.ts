@@ -90,7 +90,7 @@ export function buildProjectGraphMinimal(slug: string, pd: ProjectData, type = "
         ...(pd.hero.link ? { sameAs: [pd.hero.link] } : {}),
         mainEntityOfPage: id,
         isPartOf: { "@id": `${SITE}${SITE_SLUGS.projects}#page` },
-        author: { "@id": `${SITE}#austin` },
+        author: { "@id": `${SITE}/#austin-serb` },
         publisher: { "@id": `${SITE}#org` },
         inLanguage: "en",
       },
@@ -193,7 +193,7 @@ export const siteGraph = {
     },
     {
       "@type": "Person",
-      "@id": `${SITE}#austin`,
+      "@id": `${SITE}/#austin-serb`,
       name: "Austin Serb",
       url: SITE,
       jobTitle: "Full-Stack Engineer",
