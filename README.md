@@ -1,12 +1,16 @@
 # [Austin Serb - Web Developer Portfolio](https://www.austinserb.com/) - Nextjs, React Zero UI
 
 
+
+![austin-serb-portoflio-website-front-end-engineer](https://github.com/user-attachments/assets/68aaf3f3-ec9b-4186-ac31-77f6288bc5d3) 
+ 
+
 This portfolio started as a personal technical challenge. I wanted to take a design direction I loved and rebuild it the way a **modern software engineer** would: with Next.js, React Server Components, and a zero-re-render approach to complex animations.
 
 A major creative spark for this project came from the Webflow/Framer site **“Launchfolio” by Joseph Alexander**
 [https://launchfolio.framer.website/](https://launchfolio.framer.website/)
 
-Joseph’s work is incredible and set a visual bar that pushed me to explore what the same feel could look like when rebuilt from scratch using real engineering practices. My goal wasn’t to replicate it, but to push myself technically while staying in conversation with that aesthetic.
+Joseph’s work is incredible and set a visual bar that pushed me to explore what the same feel could perform like when rebuilt from scratch using real engineering practices. My goal wasn’t to replicate it, but to push myself technically while staying in conversation with that aesthetic.
 
 So this project became a playground for:
 
@@ -36,7 +40,7 @@ However, I ask that you **don’t clone or repurpose this portfolio directly**.
 
 It’s simply important to me that the design and structure don’t end up as a sea of lookalikes online.
 
-This project represents my personal brand and engineering philosophy. I want to keep that identity intact.
+This project represents many hours of work and my engineering philosophy. I want to keep that identity intact.
 
 So Please:
 
