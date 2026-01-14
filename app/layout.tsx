@@ -10,7 +10,7 @@ import { bodyAttributes } from "@zero-ui/attributes"
 import { ViewTransitions } from "./utils/ViewTransition"
 import { BottomBlurOverlay } from "./ui/BlurBottomOverlay"
 // import { LazySplashCursor } from "./utils/lazy-splash-cursor"
-import { DesktopCursor } from "./utils/lazy-dot-cursor"
+// import { DesktopCursor } from "./utils/lazy-dot-cursor"
 import { siteGraph } from "@/config/schemas"
 import Script from "next/script"
 import { Clarity } from "./components/ui/Clarity"
@@ -34,7 +34,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body {...bodyAttributes} className="relative min-w-[300px] bg-white" data-mobile-menu="closed" data-scrolled="up">
         <MotionWrapper>
-          <DesktopCursor />
+          {/* <DesktopCursor /> */}
           <ViewTransitions />
 
           <div className="custom:mx-auto xxs:mx-3.5 pointer-events-none absolute inset-0 z-1 max-w-6xl [background-image:url('/assets/framer-noise.png')] [background-size:128px] bg-repeat opacity-6 md:mx-5 lg:mx-8" />
