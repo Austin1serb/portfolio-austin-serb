@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
-import React, { useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 
 interface ColorRGB {
   r: number
@@ -53,20 +52,20 @@ function pointerPrototype(): Pointer {
   }
 }
 
-export function SplashCursor({
+export default function SplashCursor({
   SIM_RESOLUTION = 128,
-  DYE_RESOLUTION = 256,
+  DYE_RESOLUTION = 1440,
   CAPTURE_RESOLUTION = 512,
-  DENSITY_DISSIPATION = 3,
-  VELOCITY_DISSIPATION = 1.5,
+  DENSITY_DISSIPATION = 3.5,
+  VELOCITY_DISSIPATION = 2,
   PRESSURE = 0.1,
   PRESSURE_ITERATIONS = 20,
   CURL = 3,
-  SPLAT_RADIUS = 0.1,
+  SPLAT_RADIUS = 0.2,
   SPLAT_FORCE = 6000,
-  SHADING = false,
-  COLOR_UPDATE_SPEED = 5,
-  BACK_COLOR = { r: 0, g: 0, b: 0 },
+  SHADING = true,
+  COLOR_UPDATE_SPEED = 10,
+  BACK_COLOR = { r: 0.5, g: 0, b: 0 },
   TRANSPARENT = true,
 }: SplashCursorProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -74,9 +73,10 @@ export function SplashCursor({
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-    const pointers: Pointer[] = [pointerPrototype()]
 
-    const config = {
+    let pointers: Pointer[] = [pointerPrototype()]
+
+    let config = {
       SIM_RESOLUTION: SIM_RESOLUTION!,
       DYE_RESOLUTION: DYE_RESOLUTION!,
       CAPTURE_RESOLUTION: CAPTURE_RESOLUTION!,
@@ -233,7 +233,7 @@ export function SplashCursor({
       gl.shaderSource(shader, shaderSource)
       gl.compileShader(shader)
       if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-        // console.trace(gl.getShaderInfoLog(shader))
+        console.trace(gl.getShaderInfoLog(shader))
       }
       return shader
     }
@@ -246,13 +246,13 @@ export function SplashCursor({
       gl.attachShader(program, fragmentShader)
       gl.linkProgram(program)
       if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-        // console.trace(gl.getProgramInfoLog(program))
+        console.trace(gl.getProgramInfoLog(program))
       }
       return program
     }
 
     function getUniforms(program: WebGLProgram) {
-      const uniforms: Record<string, WebGLUniformLocation | null> = {}
+      let uniforms: Record<string, WebGLUniformLocation | null> = {}
       const uniformCount = gl.getProgramParameter(program, gl.ACTIVE_UNIFORMS)
       for (let i = 0; i < uniformCount; i++) {
         const uniformInfo = gl.getActiveUniform(program, i)
@@ -784,7 +784,7 @@ export function SplashCursor({
       const w = gl.drawingBufferWidth
       const h = gl.drawingBufferHeight
       const aspectRatio = w / h
-      const aspect = aspectRatio < 1 ? 1 / aspectRatio : aspectRatio
+      let aspect = aspectRatio < 1 ? 1 / aspectRatio : aspectRatio
       const min = Math.round(resolution)
       const max = Math.round(resolution * aspect)
       if (w > h) {
@@ -1139,7 +1139,7 @@ export function SplashCursor({
       return ((value - min) % range) + min
     }
 
-    window.addEventListener("pointerdown", (e) => {
+    window.addEventListener("mousedown", (e) => {
       const pointer = pointers[0]
       const posX = scaleByPixelRatio(e.clientX)
       const posY = scaleByPixelRatio(e.clientY)
@@ -1147,16 +1147,16 @@ export function SplashCursor({
       clickSplat(pointer)
     })
 
-    function handleFirstMouseMove(e: PointerEvent) {
+    function handleFirstMouseMove(e: MouseEvent) {
       const pointer = pointers[0]
       const posX = scaleByPixelRatio(e.clientX)
       const posY = scaleByPixelRatio(e.clientY)
       const color = generateColor()
       updateFrame()
       updatePointerMoveData(pointer, posX, posY, color)
-      document.body.removeEventListener("pointermove", handleFirstMouseMove)
+      document.body.removeEventListener("mousemove", handleFirstMouseMove)
     }
-    document.body.addEventListener("pointermove", handleFirstMouseMove)
+    document.body.addEventListener("mousemove", handleFirstMouseMove)
 
     window.addEventListener("mousemove", (e) => {
       const pointer = pointers[0]
@@ -1231,5 +1231,9 @@ export function SplashCursor({
     TRANSPARENT,
   ])
 
-  return <canvas ref={canvasRef} id="fluid" className="pointer-events-none fixed top-0 left-0 z-50 h-full w-full opacity-20" />
+  return (
+    <div className="pointer-events-none fixed top-0 left-0 z-50 h-full w-full">
+      <canvas ref={canvasRef} id="fluid" className="block h-screen w-screen"></canvas>
+    </div>
+  )
 }
