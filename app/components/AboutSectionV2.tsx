@@ -23,7 +23,7 @@ export const AboutSectionV2 = ({ className = "" }: { className?: string }) => {
           <div className="flex [flex:1_0_0px] flex-col gap-6">
             {/* portrait + overlay icons */}
 
-            <ImageReveal src={profilePhoto} alt="Austin Serb" className="custom-shadow aspect-[4/4.5]" />
+            <ImageReveal src={profilePhoto} alt="Austin Serb Headshot" className="custom-shadow aspect-[4/4.5]" />
 
             {/* name + role */}
             <MotionDiv
@@ -34,28 +34,32 @@ export const AboutSectionV2 = ({ className = "" }: { className?: string }) => {
               <Text as="h2" size="lg" className="font-medium">
                 Austin Serb
               </Text>
-              <p className="text-sm text-gray-500">Full-Stack Engineer (Next.js + TypeScript)</p>
+              <p className="text-sm text-gray-500">
+                Full-Stack Engineer @
+                <a href="https://www.serbyte.net/" target="_blank" rel="noopener" className="text-nowrap text-slate-900 hover:underline">
+                  Serbyte Development
+                </a>
+              </p>
             </MotionDiv>
           </div>
           {/* ---------------- right column ---------------- */}
           <Typography as="article" size="lg" className="[flex:1.5_0_0px] space-y-8 text-slate-500">
             <p>
-              <strong className="font-semibold text-slate-900">I build production systems and invent tools</strong> when the platform gets in the way. I created
-              <a href="https://github.com/react-zero-ui" target="_blank" rel="noopener">
-                {" "}
-                React Zero UI
-              </a>
-              . A ~350B micro-library that updates UI by flipping data-* attributes, eliminating React re-renders for UI state. This site runs on it.
+              <strong className="font-semibold text-slate-900">I've always been interested in how things work.</strong>
             </p>
 
             <p>
-              <strong className="font-semibold text-slate-900">I ship v1s in weeks and iterate in days</strong>. Leveraging tools server-first React, typed
-              APIs, background jobs, CI/CD, and observability. Small PRs, rapid feedback, no ceremony.
+              When I was a kid, I would stay up late and sneak onto the computer so I could explore the internet. It felt like a new world.
+              <br />
+              <br />I didn't know it then, but that curiosity would eventually turn into building software, designing systems, and creating tools for real
+              businesses.
             </p>
+
             <p>
-              <strong className="font-semibold text-slate-900">My core philosophy is simplicity</strong>. if complexity balloons, I delete it and design the
-              simpler path.
+              Today, people come to me with ideas, and I help turn them into real products - apps, websites, or systems their customers or team can actually
+              use.
             </p>
+            <p>Outside of building software, I like to work out, wrench on cars, trade stocks, or learn something completely new.</p>
 
             {/* signature */}
             <Image src={signature} alt="Austin Serb Signature" className="relative mt-6 -ml-3 h-12 w-auto" />

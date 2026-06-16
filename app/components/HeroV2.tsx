@@ -29,12 +29,8 @@ export const HeroV2 = () => {
           </h1>
 
           <AnimatedElement element="p" delay={0.6} className="max-w-xs text-sm leading-snug tracking-tight text-slate-700 md:max-w-sm md:pr-4 md:text-base">
-            <strong className="font-semibold text-slate-900">Frontend-focused full stack developer.</strong> React & Next.js specialist. Creator of{" "}
-            <a href="https://github.com/react-zero-ui" target="_blank" rel="noopener" className="font-semibold text-slate-900">
-              React-Zero-UI
-            </a>
-            . Founder of{" "}
-            <a href="https://www.serbyte.net/" target="_blank" rel="noopener" className="font-semibold text-slate-900">
+            <strong className="font-semibold text-slate-900">I turn messy ideas into simple products.</strong> Full-stack developer & founder of{" "}
+            <a href="https://www.serbyte.net/" target="_blank" rel="noopener" className="text-nowrap text-slate-900 hover:underline">
               Serbyte Development
             </a>
           </AnimatedElement>

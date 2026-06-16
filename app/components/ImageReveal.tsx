@@ -31,13 +31,13 @@ export function ImageReveal({ className = "", ...img }: ImageRevealProps): React
         className="absolute inset-0"
         viewport={{ once: true, margin: "0px 0px -200px 0px" }}
       >
-        <Socials socialLinks={socialLinks} className="absolute right-4 bottom-4 z-5" iconClassName="md:opacity-85 hover:opacity-100" />
+        <Socials socialLinks={socialLinks} className="absolute right-4 bottom-4 z-5" iconClassName="md:opacity-95 hover:opacity-100" />
         <Image
           id="headshot"
           {...img}
           fill
           alt="Austin Serb Profile Photo"
-          className={`rounded-2xl object-cover saturate-125`}
+          className={`rounded-2xl object-cover`}
           sizes="(max-width: 560px) 300px, (max-width: 768px) 500px, 50vw"
         />
       </MotionDiv>

@@ -20,10 +20,10 @@ const tech = [
 
 const services = [
   { name: "Full Stack Development", src: "magic-wand" },
-  { name: "React Development", src: "paint-bucket" },
-  { name: "Performance Optimization", src: "web" },
+  { name: "Next.js Development", src: "paint-bucket" },
+  { name: "Database Architecture", src: "web" },
   { name: "UI/UX Design", src: "world" },
-  { name: "Code Reviews", src: "planet" },
+  { name: "API Development", src: "planet" },
   { name: "Advanced Motion", src: "cube" },
 ]
 
